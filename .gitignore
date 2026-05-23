@@ -1,0 +1,10 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+testcases/*.in
+testcases/*.out
+testcases/*.ans
+testcases/*.txt
+!testcases/.gitkeep

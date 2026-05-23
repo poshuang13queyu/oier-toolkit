@@ -1,0 +1,72 @@
+{
+  "name": "oier-toolkit",
+  "displayName": "oier_toolkit",
+  "description": "OIer数据生成与对拍工具",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+  "viewsContainers": {
+    "activitybar": [
+      {
+        "id": "oierToolkit-sidebar",
+        "title": "OIer Toolkit",
+        "icon": "$(beaker)"
+      }
+    ]
+  },
+  "views": {
+    "oierToolkit-sidebar": [
+      {
+        "type": "webview",
+        "id": "oierToolkit.sidebar",
+        "name": "工具箱"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "command": "oier-toolkit.helloWorld",
+      "title": "Hello World"
+    }
+  ]
+},
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@types/vscode": "^1.120.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.0.14",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}
